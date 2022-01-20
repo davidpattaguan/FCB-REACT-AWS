@@ -1,14 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-//My First Component
 
 const App = () => {
+  const paraStyle = {
+    marginBottom: "20px",
+  };
+
   return (
     <div className="app">
       <header className="app-header">
         <h1>My Amazing ToDo-List</h1>
-        <p>The most simple and amazing todo-list React app.</p>
+        <p style={paraStyle}>
+          The most simple and amazing todo-list React app.
+        </p>
+        <ul>
+          <li className="tasks-item">Follow Edukasyon.ph on Facebook</li>
+          <li className="tasks-item">
+            Follow AWS Siklab Pilipinas on Facebook
+          </li>
+          <li className="tasks-item">
+            Follow Zuittt Coding Bootcamp on Facebook
+          </li>
+        </ul>
       </header>
     </div>
   );
