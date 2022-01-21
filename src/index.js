@@ -1,46 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-
-//DATA EXAMPLE
-const taskItemsList = [
-  "Follow Edukasyon.ph on Facebook",
-  "Follow AWS Siklab Pilipinas on Facebook",
-  "Follow Zuittt Coding Bootcamp on Facebook",
-];
-
-//TASK MAIN COMPONENT
-const TasksList = () => {
-  return (
-    <div>
-      <input className="task-input" />
-      <ul>
-        {taskItemsList.map((task, index) => {
-          return <Task taskName={task} key={index} />;
-        })}
-      </ul>
-    </div>
-  );
-};
-
-//TASK ITEM
-const Task = ({ taskName }) => {
-  return <li className="tasks-item">{taskName}</li>;
-};
+import TasksList from "./components/TasksList";
+import { useState } from "react";
 
 const App = () => {
-  const paraStyle = {
-    marginBottom: "20px",
-  };
+  const [taskItemsList, setTaskItemsList] = useState([
+    "Follow Edukasyon.ph on Facebook",
+    "Follow AWS Siklab Pilipinas on Facebook",
+    "Follow Zuittt Coding Bootcamp on Facebook",
+  ]);
 
   return (
     <div className="app">
       <header className="app-header">
         <h1>My Amazing ToDo-List</h1>
-        <p style={paraStyle}>
-          The most simple and amazing todo-list React app.
-        </p>
-        <TasksList />
+        <p>The most simple and amazing todo-list React app.</p>
+
+        <TasksList
+          taskItemsList={taskItemsList}
+          setTaskItemsList={setTaskItemsList}
+        />
       </header>
     </div>
   );
