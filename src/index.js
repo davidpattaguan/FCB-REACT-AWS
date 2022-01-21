@@ -2,14 +2,27 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
+//DATA EXAMPLE
+const taskItemsList = [
+  "Follow Edukasyon.ph on Facebook",
+  "Follow AWS Siklab Pilipinas on Facebook",
+  "Follow Zuittt Coding Bootcamp on Facebook",
+];
+
+//TASK MAIN COMPONENT
 const TasksList = () => {
   return (
     <ul>
-      <li className="tasks-item">Follow Edukasyon.ph on Facebook</li>
-      <li className="tasks-item">Follow AWS Siklab Pilipinas on Facebook</li>
-      <li className="tasks-item">Follow Zuittt Coding Bootcamp on Facebook</li>
+      {taskItemsList.map((task, index) => {
+        return <Task taskName={task} key={index} />;
+      })}
     </ul>
   );
+};
+
+//TASK ITEM
+const Task = ({ taskName }) => {
+  return <li className="tasks-item">{taskName}</li>;
 };
 
 const App = () => {
