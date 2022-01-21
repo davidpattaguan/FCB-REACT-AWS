@@ -12,11 +12,14 @@ const taskItemsList = [
 //TASK MAIN COMPONENT
 const TasksList = () => {
   return (
-    <ul>
-      {taskItemsList.map((task, index) => {
-        return <Task taskName={task} key={index} />;
-      })}
-    </ul>
+    <div>
+      <input className="task-input" />
+      <ul>
+        {taskItemsList.map((task, index) => {
+          return <Task taskName={task} key={index} />;
+        })}
+      </ul>
+    </div>
   );
 };
 
